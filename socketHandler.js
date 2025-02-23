@@ -24,7 +24,7 @@ const initializeSocket = (server) => {
   });
 
   // Poll stock prices with an optimized query
-  setInterval(checkStockPrices, 5000);
+  setInterval(checkStockPrices, 3000);
 
   return io;
 };
