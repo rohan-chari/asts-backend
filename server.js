@@ -20,6 +20,6 @@ initializeSocket(server);
 app.use("/stocks", stockRoutes);
 
 // Start the server
-server.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+server.listen(3000, '0.0.0.0', () => {
+  console.log('Server is running on port 3000');
 });
