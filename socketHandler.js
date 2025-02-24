@@ -12,7 +12,7 @@ const initializeSocket = (server) => {
     console.log(`Client connected: ${socket.id}`);
 
     // Send initial stock prices when a client connects
-    db.query("SELECT price FROM stock_prices WHERE id = 1", (err, results) => {
+    db.query("SELECT price FROM stock_prices WHERE id = 778255", (err, results) => {
       if (!err) {
         socket.emit("stockPricesUpdated", results);
       }
@@ -31,7 +31,7 @@ const initializeSocket = (server) => {
 
 // Optimized query to check only updated stock prices
 const checkStockPrices = () => {
-  db.query("SELECT price FROM stock_prices WHERE id = 1", (err, results) => {
+  db.query("SELECT price FROM stock_prices WHERE id = 778255", (err, results) => {
     if (err) {
       console.error("Database query error:", err);
       return;
