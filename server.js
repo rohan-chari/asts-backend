@@ -3,6 +3,7 @@ const http = require("http");
 const cors = require("cors");
 const initializeSocket = require("./socketHandler"); // Import WebSocket logic
 const stockRoutes = require("./stockRoutes");
+const tweetRoutes = require("./tweetRoutes")
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -18,6 +19,8 @@ initializeSocket(server);
 
 // Use stock routes
 app.use("/stocks", stockRoutes);
+
+app.use("/tweets", tweetRoutes)
 
 // Start the server
 server.listen(3000, '0.0.0.0', () => {
